@@ -50,11 +50,11 @@ export async function POST(req: Request) {
     const { id } = evt.data;
     const eventType = evt.type;
 
-    if (eventType === 'user.created') {
+    if (eventType === 'user.created' || eventType === 'user.updated') {
         const { id, email_addresses, first_name, last_name } = evt.data;
 
         // Log event safely (PII redacted)
-        console.log('Received Clerk user.created event:', {
+        console.log(`Received Clerk ${eventType} event:`, {
             id,
             email_count: email_addresses?.length ?? 0
         });
@@ -80,6 +80,21 @@ export async function POST(req: Request) {
         if (error) {
             console.error('Error syncing user to Supabase:', error);
             return new Response('Error syncing user', { status: 500 });
+        }
+    } else if (eventType === 'user.deleted') {
+        const { id } = evt.data;
+
+        console.log('Received Clerk user.deleted event:', { id });
+
+        if (!id) {
+            return new Response('Error: No user ID found', { status: 400 });
+        }
+
+        const { error } = await supabaseAdmin.from('users').delete().eq('id', id);
+
+        if (error) {
+            console.error('Error deleting user from Supabase:', error);
+            return new Response('Error deleting user', { status: 500 });
         }
     }
 
