@@ -150,27 +150,7 @@
   }
 }
 
-.dark {
-  /* Same as root/default */
-  --background: oklch(0.05 0 0);
-  --foreground: oklch(0.985 0.002 247.839);
-  --card: oklch(0.1 0 0);
-  --card-foreground: oklch(0.985 0.002 247.839);
-  --popover: oklch(0.1 0 0);
-  --popover-foreground: oklch(0.985 0.002 247.839);
-  --primary: oklch(0.6 0.25 290);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.2 0.05 290);
-  --secondary-foreground: oklch(0.985 0.002 247.839);
-  --muted: oklch(0.2 0 0);
-  --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.25 0.1 290);
-  --accent-foreground: oklch(0.985 0.002 247.839);
-  --destructive: oklch(0.6 0.25 25);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.2 0 0);
-  --ring: oklch(0.6 0.25 290);
-}
+/* .dark class is redundant as :root enforces dark theme */
 
 @layer base {
   * {

@@ -21,31 +21,23 @@ You can get your code reviewed before you commit and get feedback immediately wh
 <CardGroup cols={2}>
   <Card title="Review uncommitted changes" icon="code">
     Analyze your working directory for race conditions, null pointer exceptions,
-```
-and logic errors before you commit.
-```
+    and logic errors before you commit.
   </Card>
 
   <Card title="One-step fixes" icon="wand-sparkles">
     Apply simple fixes like import corrections instantly. Hand complex
-```
-architectural issues to your AI agent with full context.
-```
+    architectural issues to your AI agent with full context.
   </Card>
 
   <Card title="Context-aware reviews" icon="brain">
     Paid users get reviews enhanced by learnings from your team's patterns -
-```
-remembers your error handling styles, architectural decisions, and coding
-preferences.
-```
+    remembers your error handling styles, architectural decisions, and coding
+    preferences.
   </Card>
 
   <Card title="Detects coding agent files" icon="folder-root">
     Automatically reads claude.md, .cursorrules, and custom team standards to
-```
-enforce your specific coding guidelines in every review.
-```
+    enforce your specific coding guidelines in every review.
   </Card>
 </CardGroup>
 

@@ -20,6 +20,13 @@ VidMaxx is an AI-powered application that allows users to generate high-quality 
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
 First, run the development server:
 
 ```bash
