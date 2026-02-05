@@ -25,8 +25,7 @@ export async function POST(req: Request) {
     }
 
     // Get the body
-    const payload = await req.json()
-    const body = JSON.stringify(payload);
+    const body = await req.text()
 
     // Create a new Svix instance with your secret.
     const wh = new Webhook(WEBHOOK_SECRET);
@@ -70,10 +69,12 @@ export async function POST(req: Request) {
         }
 
         // Sync to Supabase using Admin Client (Bypasses RLS)
-        const { error } = await supabaseAdmin.from('users').insert({
+        const { error } = await supabaseAdmin.from('users').upsert({
             id: id,
             email: email,
             full_name: name
+        }, {
+            onConflict: 'id'
         });
 
         if (error) {
