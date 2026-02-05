@@ -31,7 +31,7 @@ SUPABASE_SERVICE_ROLE_KEY=your-service-role-key  # Required for bypassing RLS in
 The `public.users` table must be compatible with Clerk IDs (Text) and have appropriate RLS policies.
 
 1.  Open **Supabase Dashboard** -> **SQL Editor**.
-2.  Copy the content of [clerk_migration.sql](file:///../../supabase/clerk_migration.sql).
+2.  Copy the content of [clerk_migration.sql](../../supabase/clerk_migration.sql).
 3.  **Run** the script.
     *   *Effect*: Changes `id` to Text, creates `users_public` view, and restricts `users` table to Service Role only.
 
@@ -47,7 +47,7 @@ To sync users from Clerk to Supabase:
 Start the server and test the flow:
 
 ```bash
-// turbo
+# turbo
 npm run dev
 ```
 

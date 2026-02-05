@@ -880,6 +880,6 @@ Tool versions are automatically managed by CodeRabbit and updated regularly. Ver
 ## Related Resources
 
 - [Configuration Guide](./yaml-configuration-guide.md) - Complete YAML configuration guide
-- [GitHub Commands Reference](../referance/github-commands.md) - PR command reference
+- [GitHub Commands Reference](../references/github-commands.md) - PR command reference
 - [CodeRabbit Tools Documentation](https://docs.coderabbit.ai/tools/list) - Official tools list
 - [Tools Reference Schema](https://docs.coderabbit.ai/reference/tools-reference) - Complete schema reference

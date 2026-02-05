@@ -50,7 +50,7 @@ Creates GitHub PRs with titles that pass n8n's `check-pr-title` CI validation.
    ```bash
    git status
    git diff --stat
-   git log origin/master..HEAD --oneline
+   git log origin/main..HEAD --oneline
    ```
 
 2. **Analyze changes** to determine:
@@ -70,14 +70,14 @@ Creates GitHub PRs with titles that pass n8n's `check-pr-title` CI validation.
 
    <Describe what the PR does and how to test. Photos and videos are recommended.>
 
-   ## Related Linear tickets, Github issues, and Community forum posts
+   ## Related Linear tickets, GitHub issues, and Community forum posts
 
    <!-- Link to Linear ticket: https://linear.app/n8n/issue/[TICKET-ID] -->
    <!-- Use "closes #<issue-number>", "fixes #<issue-number>", or "resolves #<issue-number>" to automatically close issues -->
 
    ## Review / Merge checklist
 
-   - [ ] PR title and summary are descriptive. ([conventions](../blob/master/.github/pull_request_title_conventions.md))
+   - [ ] PR title and summary are descriptive. ([conventions](../blob/main/.github/pull_request_title_conventions.md))
    - [ ] [Docs updated](https://github.com/n8n-io/n8n-docs) or follow-up ticket created.
    - [ ] Tests included.
    - [ ] PR Labeled with `release/backport` (if the PR is an urgent fix that needs to be backported)

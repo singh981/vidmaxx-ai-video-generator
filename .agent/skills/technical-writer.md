@@ -92,7 +92,7 @@ Use this skill when:
 ```
 
 ### For API Documentation
-```markdown
+````markdown
 ## Function/Endpoint Name
 
 [Brief description of what it does]
@@ -117,7 +117,7 @@ Use this skill when:
 
 | Code | Description | Solution |
 |------|-------------|----------|
-```
+````
 
 ### For Tutorials
 ```markdown
