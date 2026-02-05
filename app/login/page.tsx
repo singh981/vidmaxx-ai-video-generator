@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Loader2 } from 'lucide-react'
+import { toast } from 'sonner'
 
 /**
  * LoginPage component.
