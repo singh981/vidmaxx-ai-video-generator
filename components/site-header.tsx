@@ -1,6 +1,13 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { Menu } from "lucide-react"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 /**
  * SiteHeader component.
@@ -10,14 +17,16 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 export function SiteHeader() {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 max-w-screen-2xl items-center">
-                <div className="mr-4 flex">
+            <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
+                <div className="flex items-center">
                     <Link className="mr-6 flex items-center space-x-2" href="/">
-                        <span className="hidden font-bold sm:inline-block text-xl tracking-tighter bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+                        {/* Logo now visible on all screens */}
+                        <span className="font-bold inline-block text-xl tracking-tighter bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
                             VidMax
                         </span>
                     </Link>
-                    <nav className="flex items-center gap-6 text-sm">
+                    {/* Desktop Navigation - Hidden on mobile */}
+                    <nav className="hidden md:flex items-center gap-6 text-sm">
                         <Link
                             href="#features"
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
@@ -39,7 +48,7 @@ export function SiteHeader() {
                     </nav>
                 </div>
 
-                <div className="flex flex-1 items-center justify-end space-x-2 md:justify-end">
+                <div className="flex items-center justify-end space-x-4">
                     <nav className="flex items-center space-x-2">
                         <SignedOut>
                             <SignInButton mode="modal">
@@ -52,8 +61,47 @@ export function SiteHeader() {
                             <UserButton />
                         </SignedIn>
                     </nav>
+
+                    {/* Mobile Menu Trigger */}
+                    <div className="md:hidden">
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="ghost" size="icon" className="h-9 w-9">
+                                    <Menu className="h-5 w-5" />
+                                    <span className="sr-only">Toggle menu</span>
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" className="w-[200px] flex flex-col gap-2 p-4 rounded-xl border border-border/40 bg-background/95 backdrop-blur-md">
+                                <DropdownMenuItem asChild>
+                                    <Link
+                                        href="#features"
+                                        className="w-full cursor-pointer text-base font-medium transition-colors hover:text-primary"
+                                    >
+                                        Features
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link
+                                        href="#pricing"
+                                        className="w-full cursor-pointer text-base font-medium transition-colors hover:text-primary"
+                                    >
+                                        Pricing
+                                    </Link>
+                                </DropdownMenuItem>
+                                <DropdownMenuItem asChild>
+                                    <Link
+                                        href="#about"
+                                        className="w-full cursor-pointer text-base font-medium transition-colors hover:text-primary"
+                                    >
+                                        About
+                                    </Link>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
                 </div>
             </div>
         </header>
     )
 }
+
