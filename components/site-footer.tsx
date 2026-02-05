@@ -20,29 +20,26 @@ export function SiteFooter() {
                             The AI-powered video generator and scheduler for the next generation of creators.
                         </p>
                         <div className="flex space-x-4 pt-2">
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Twitter className="h-5 w-5" />
-                                <span className="sr-only">Twitter</span>
-                            </Link>
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Instagram className="h-5 w-5" />
-                                <span className="sr-only">Instagram</span>
-                            </Link>
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Linkedin className="h-5 w-5" />
-                                <span className="sr-only">LinkedIn</span>
-                            </Link>
-                            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Github className="h-5 w-5" />
-                                <span className="sr-only">GitHub</span>
-                            </Link>
+                            <div className="flex gap-4">
+                                <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 hover:text-primary transition-colors">
+                                    <Twitter className="h-5 w-5" />
+                                </Link>
+                                <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 hover:text-primary transition-colors">
+                                    <Instagram className="h-5 w-5" />
+                                </Link>
+                                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 hover:text-primary transition-colors">
+                                    <Linkedin className="h-5 w-5" />
+                                </Link>
+                                <Link href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 hover:text-primary transition-colors">
+                                    <Github className="h-5 w-5" />
+                                </Link>
+                            </div>
                         </div>
                     </div>
 
                     <div>
                         <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">Product</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
-                            <li><Link href="#" className="hover:text-primary transition-colors">AI Generator</Link></li>
                             <li><Link href="#" className="hover:text-primary transition-colors">Video Scheduler</Link></li>
                             <li><Link href="#" className="hover:text-primary transition-colors">Templates</Link></li>
                             <li><Link href="#" className="hover:text-primary transition-colors">Pricing</Link></li>

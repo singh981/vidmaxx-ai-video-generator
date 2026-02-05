@@ -1,6 +1,5 @@
--- 1. Create the public users table
 create table if not exists public.users (
-  id uuid references auth.users not null primary key,
+  id uuid references auth.users on delete cascade not null primary key,
   email text,
   full_name text,
   created_at timestamp with time zone default timezone('utc'::text, now()) not null

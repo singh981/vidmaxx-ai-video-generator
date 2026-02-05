@@ -42,9 +42,11 @@ export function SiteHeader() {
                         <Link href="/login" className="text-sm font-medium transition-colors hover:text-primary mr-4 text-muted-foreground">
                             Login
                         </Link>
-                        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
-                            Get Started
-                        </Button>
+                        <Link href="/login">
+                            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
+                                Get Started
+                            </Button>
+                        </Link>
                     </nav>
                 </div>
             </div>

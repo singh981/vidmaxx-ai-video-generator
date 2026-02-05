@@ -30,13 +30,17 @@ export function HeroSection() {
                         Stop editing for hours. VidMax generates, edits, and schedules your short-form content for YouTube, Instagram, and TikTok automatically.
                     </p>
 
-                    <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button size="lg" className="h-12 px-8 text-lg rounded-full bg-primary hover:bg-primary/90 shadow-[0_0_30px_-5px_var(--primary)] transition-all hover:scale-105">
-                            Start Creating for Free
-                        </Button>
-                        <Button size="lg" variant="outline" className="h-12 px-8 text-lg rounded-full border-primary/20 hover:bg-primary/5 transition-all">
-                            View Demo
-                        </Button>
+                    <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                        <Link href="/login">
+                            <Button size="lg" className="h-12 px-8 text-lg bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 rounded-full transition-all hover:scale-105">
+                                Start Creating for Free
+                            </Button>
+                        </Link>
+                        <Link href="#demo">
+                            <Button variant="outline" size="lg" className="h-12 px-8 text-lg border-primary/20 bg-black/40 hover:bg-primary/10 hover:text-primary rounded-full backdrop-blur-sm transition-all">
+                                View Demo
+                            </Button>
+                        </Link>
                     </div>
                 </div>
 

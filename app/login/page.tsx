@@ -39,7 +39,7 @@ export default function LoginPage() {
                     },
                 })
                 if (error) throw error
-                alert('Check your email for the confirmation link!')
+                toast.success('Check your email for the confirmation link!')
             } else {
                 const { error } = await supabase.auth.signInWithPassword({
                     email,
