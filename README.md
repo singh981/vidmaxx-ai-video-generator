@@ -8,8 +8,9 @@ VidMaxx is an AI-powered application that allows users to generate high-quality 
 - **Secure Authentication**: User authentication and management powered by Clerk.
 - **Robust User Sync**: Real-time synchronization between Clerk and Supabase via webhooks.
 - **Scalable Database**: Data persistence handled by Supabase.
-- **Modern Landing Page**: Complete landing page with Hero, Features, Pricing, and About sections.
-- **Modern UI**: Built with Next.js and styled for a premium user experience.
+- **Enhanced Authentication UI**: Seamless Sign Up and Sign In experience with Clerk modals.
+- **User Dashboard**: Dedicated dashboard access with smart routing based on authentication state.
+- **Modern UI**: Built with Next.js, featuring a refined Hero section and responsive Header.
 
 ## Tech Stack
 

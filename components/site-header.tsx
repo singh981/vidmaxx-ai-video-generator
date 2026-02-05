@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { Menu } from "lucide-react"
 import {
     DropdownMenu,
@@ -49,13 +49,25 @@ export function SiteHeader() {
                 </div>
 
                 <div className="flex items-center justify-end space-x-4">
-                    <nav className="flex items-center space-x-2">
+                    <nav className="flex items-center space-x-6">
+                        <SignedIn>
+                            <Link href="/dashboard">
+                                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
+                                    Dashboard
+                                </Button>
+                            </Link>
+                        </SignedIn>
                         <SignedOut>
                             <SignInButton mode="modal">
-                                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
+                                <Button variant="ghost" className="hover:text-primary">
                                     Sign In
                                 </Button>
                             </SignInButton>
+                            <SignUpButton mode="modal">
+                                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
+                                    Sign Up
+                                </Button>
+                            </SignUpButton>
                         </SignedOut>
                         <SignedIn>
                             <UserButton />
