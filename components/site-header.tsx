@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { Menu } from "lucide-react"
@@ -20,7 +21,13 @@ export function SiteHeader() {
             <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
                 <div className="flex items-center">
                     <Link className="mr-6 flex items-center space-x-2" href="/">
-                        {/* Logo now visible on all screens */}
+                        <Image
+                            src="/vidmaxx-icon.svg"
+                            alt="VidMax Logo"
+                            width={40}
+                            height={40}
+                            className="w-10 h-10"
+                        />
                         <span className="font-bold inline-block text-xl tracking-tighter bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
                             VidMax
                         </span>
