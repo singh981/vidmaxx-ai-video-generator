@@ -17,18 +17,24 @@ export const metadata: Metadata = {
   description: "Vidmaxx is an AI-powered video generator and scheduler that helps you create and schedule videos for your business.",
 };
 
+import { ClerkProvider } from '@clerk/nextjs'
+
+// ... existing imports
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

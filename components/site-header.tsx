@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 /**
  * SiteHeader component.
@@ -37,16 +38,19 @@ export function SiteHeader() {
                         </Link>
                     </nav>
                 </div>
+
                 <div className="flex flex-1 items-center justify-end space-x-2 md:justify-end">
                     <nav className="flex items-center space-x-2">
-                        <Link href="/login" className="text-sm font-medium transition-colors hover:text-primary mr-4 text-muted-foreground">
-                            Login
-                        </Link>
-                        <Link href="/login">
-                            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
-                                Get Started
-                            </Button>
-                        </Link>
+                        <SignedOut>
+                            <SignInButton mode="modal">
+                                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
+                                    Sign In
+                                </Button>
+                            </SignInButton>
+                        </SignedOut>
+                        <SignedIn>
+                            <UserButton afterSignOutUrl="/" />
+                        </SignedIn>
                     </nav>
                 </div>
             </div>
