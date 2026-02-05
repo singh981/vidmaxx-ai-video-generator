@@ -127,6 +127,7 @@ export default function LoginPage() {
 
                 <div className="mt-6 text-center text-sm">
                     <button
+                        type="button"
                         onClick={() => setIsSignUp(!isSignUp)}
                         className="text-primary hover:underline underline-offset-4"
                     >
