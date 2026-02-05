@@ -1,7 +1,7 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
-import { supabase } from '@/lib/supabase'
+import { supabaseAdmin } from '@/lib/supabase-admin'
 
 export async function POST(req: Request) {
     // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
@@ -54,18 +54,23 @@ export async function POST(req: Request) {
     if (eventType === 'user.created') {
         const { id, email_addresses, first_name, last_name } = evt.data;
 
-        console.log('Received Clerk user.created event:', { id, email_addresses });
+        // Log event safely (PII redacted)
+        console.log('Received Clerk user.created event:', {
+            id,
+            email_count: email_addresses?.length ?? 0
+        });
 
         const email = email_addresses[0]?.email_address;
         const name = `${first_name ?? ''} ${last_name ?? ''}`.trim();
 
-        // Sync to Supabase
-        // Note: We use the `service_role` key approach ideally, or RLS that allows public inserts (risky).
-        // For now, assuming the client in lib/supabase.ts relies on ANON key, RLS must allow it.
-        // Ideally, creating a separate admin client with SERVICE_ROLE key is best for webhooks.
+        // Validate email presence
+        if (!email || !email_addresses?.length) {
+            console.error('Error: No email address found for user', id);
+            return new Response('Error: No email address found', { status: 400 });
+        }
 
-        // Using simple insert for now, assuming RLS allows it (or disabled for this table temporarily)
-        const { error } = await supabase.from('users').insert({
+        // Sync to Supabase using Admin Client (Bypasses RLS)
+        const { error } = await supabaseAdmin.from('users').insert({
             id: id,
             email: email,
             full_name: name
