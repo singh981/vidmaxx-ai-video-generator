@@ -1,6 +1,11 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
+/**
+ * SiteHeader component.
+ * Displays the main site navigation, logo, and authentication actions (Login/Get Started).
+ * Uses glassmorphism effects for a premium feel.
+ */
 export function SiteHeader() {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/60 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">

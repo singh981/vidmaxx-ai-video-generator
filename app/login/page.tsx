@@ -8,6 +8,11 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Loader2 } from 'lucide-react'
 
+/**
+ * LoginPage component.
+ * Handles user authentication (Sign Up / Sign In) using Supabase Auth.
+ * Includes form state management and error handling.
+ */
 export default function LoginPage() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

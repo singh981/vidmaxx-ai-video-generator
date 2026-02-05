@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
+/**
+ * HeroSection component.
+ * The main visual anchor of the landing page, featuring a headline, CTA, and animated background visuals.
+ */
 export function HeroSection() {
     return (
         <section className="relative overflow-hidden pt-24 pb-20 md:pt-32 md:pb-28">

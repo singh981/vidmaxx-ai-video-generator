@@ -3,6 +3,10 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { Twitter, Instagram, Linkedin, Github } from "lucide-react"
 
+/**
+ * SiteFooter component.
+ * Displays the footer with links to product, company, and legal pages, along with a newsletter form.
+ */
 export function SiteFooter() {
     return (
         <footer className="border-t border-white/5 bg-black/20 backdrop-blur-sm">

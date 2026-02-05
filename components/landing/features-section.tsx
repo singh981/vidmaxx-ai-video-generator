@@ -1,6 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Wand2, CalendarClock, Zap, CheckCircle2 } from "lucide-react"
 
+/**
+ * FeaturesSection component.
+ * Displays a grid of key product features (AI Generation, Scheduling, Auto-Pilot) using cards.
+ */
 export function FeaturesSection() {
     const features = [
         {
