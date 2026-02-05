@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     const eventType = evt.type;
 
     if (eventType === 'user.created' || eventType === 'user.updated') {
-        const { id, email_addresses, first_name, last_name } = evt.data;
+        const { email_addresses, first_name, last_name } = evt.data;
 
         // Log event safely (PII redacted)
         console.log(`Received Clerk ${eventType} event:`, {
@@ -63,7 +63,7 @@ export async function POST(req: Request) {
         const name = `${first_name ?? ''} ${last_name ?? ''}`.trim();
 
         // Validate email presence
-        if (!email || !email_addresses?.length) {
+        if (!email) {
             console.error('Error: No email address found for user', id);
             return new Response('Error: No email address found', { status: 400 });
         }

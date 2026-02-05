@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs"
 
 /**
  * HeroSection component.
@@ -31,16 +32,21 @@ export function HeroSection() {
                     </p>
 
                     <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                        <Link href="/login">
-                            <Button size="lg" className="h-12 px-8 text-lg bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 rounded-full transition-all hover:scale-105">
-                                Start Creating for Free
-                            </Button>
-                        </Link>
-                        <Link href="#demo">
-                            <Button variant="outline" size="lg" className="h-12 px-8 text-lg border-primary/20 bg-black/40 hover:bg-primary/10 hover:text-primary rounded-full backdrop-blur-sm transition-all">
-                                View Demo
-                            </Button>
-                        </Link>
+                        <SignedOut>
+                            <SignInButton mode="modal">
+                                <Button size="lg" className="h-12 px-8 text-lg bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 rounded-full transition-all hover:scale-105">
+                                    Go to Dashboard
+                                </Button>
+                            </SignInButton>
+                        </SignedOut>
+
+                        <SignedIn>
+                            <Link href="/dashboard">
+                                <Button size="lg" className="h-12 px-8 text-lg bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 rounded-full transition-all hover:scale-105">
+                                    Go to Dashboard
+                                </Button>
+                            </Link>
+                        </SignedIn>
                     </div>
                 </div>
 

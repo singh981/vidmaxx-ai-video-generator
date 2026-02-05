@@ -804,7 +804,7 @@ To export your current UI configuration to YAML:
 
 ## Related Resources
 
-- [Configuration Reference](../reference/configuration.md) - Complete schema reference
+- [Configuration Reference](configuration.md) - Complete schema reference
 - [Tools Reference](./tools-reference.md) - All supported tools and options
-- [GitHub Commands Reference](../reference/github-commands.md) - PR command reference
+- [GitHub Commands Reference](github-commands.md) - PR command reference
 - [Best Practices Guide](https://docs.coderabbit.ai/guides/setup-best-practices) - Official best practices

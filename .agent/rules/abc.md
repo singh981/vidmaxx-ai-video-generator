@@ -1,6 +1,6 @@
 ---
 trigger: always_on
 glob:
-description:
+description: "Always on rule for general guidelines"
 ---
 

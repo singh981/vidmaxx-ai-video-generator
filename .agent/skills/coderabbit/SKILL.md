@@ -18,7 +18,7 @@ Integrates with Claude Code for autonomous review-and-fix workflows.
 Run CodeRabbit as part of your development workflow:
 
 ```text
-Implement the feature from the spec, then run coderabbit --prompt-only
+Implement the feature from the spec, then run wsl coderabbit --prompt-only
 in the background and fix any issues found.
 ```
 
@@ -35,14 +35,14 @@ Key flags for Claude Code:
 curl -fsSL https://cli.coderabbit.ai/install.sh | sh
 
 # Authenticate (run once per Claude Code session)
-coderabbit auth login
+wsl coderabbit auth login
 
 # Review code
-coderabbit                          # Interactive mode
-coderabbit --plain                  # Plain text output
-coderabbit --prompt-only            # AI-optimized output
-coderabbit --type uncommitted       # Only uncommitted changes
-coderabbit --base develop           # Compare against develop branch
+wsl coderabbit                          # Interactive mode
+wsl coderabbit --plain                  # Plain text output
+wsl coderabbit --prompt-only            # AI-optimized output
+wsl coderabbit --type uncommitted       # Only uncommitted changes
+wsl coderabbit --base develop           # Compare against develop branch
 ```
 
 ## Claude Code Workflow
@@ -50,7 +50,7 @@ coderabbit --base develop           # Compare against develop branch
 Recommended prompt pattern:
 
 ```text
-Please implement [feature] and then run coderabbit --prompt-only,
+Please implement [feature] and then run wsl coderabbit --prompt-only,
 let it run as long as it needs (run it in the background) and fix any issues.
 ```
 

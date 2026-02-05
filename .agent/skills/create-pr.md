@@ -72,13 +72,13 @@ Creates GitHub PRs with titles that pass n8n's `check-pr-title` CI validation.
 
    ## Related Linear tickets, GitHub issues, and Community forum posts
 
-   <!-- Link to Linear ticket: https://linear.app/n8n/issue/[TICKET-ID] -->
+   <!-- Link to Linear ticket: https://linear.app/your-org/issue/[TICKET-ID] -->
    <!-- Use "closes #<issue-number>", "fixes #<issue-number>", or "resolves #<issue-number>" to automatically close issues -->
 
    ## Review / Merge checklist
 
-   - [ ] PR title and summary are descriptive. ([conventions](../blob/main/.github/pull_request_title_conventions.md))
-   - [ ] [Docs updated](https://github.com/n8n-io/n8n-docs) or follow-up ticket created.
+   - [ ] PR title and summary are descriptive.
+   - [ ] Docs updated or follow-up ticket created.
    - [ ] Tests included.
    - [ ] PR Labeled with `release/backport` (if the PR is an urgent fix that needs to be backported)
    EOF
