@@ -190,3 +190,9 @@
     @apply bg-card/60 backdrop-blur-sm border border-white/10 shadow-lg;
   }
 }
+
+@layer utilities {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
