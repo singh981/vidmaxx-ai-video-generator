@@ -30,7 +30,7 @@ export function StepMusic({ value, onChange }: StepMusicProps) {
             <div>
                 <h2 className="text-2xl font-bold">Select Background Music</h2>
                 <p className="text-muted-foreground">
-                    Select the background music for your video.
+                    Select the background music.
                 </p>
             </div>
 

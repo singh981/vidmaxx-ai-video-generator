@@ -80,8 +80,7 @@ export function CreateSeriesWizard() {
         if (currentStep < 7) {
             setCurrentStep(currentStep + 1)
         } else {
-            // Final submit
-            console.log("Form submitted:", formData)
+            // Final submit - navigate to series page
             router.push("/dashboard/series")
         }
     }

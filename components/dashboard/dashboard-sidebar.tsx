@@ -71,16 +71,16 @@ export function DashboardSidebar({ ...props }: React.ComponentProps<typeof Sideb
             <SidebarHeader className={isCollapsed ? "flex items-center justify-center py-4" : ""}>
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton size="lg" asChild tooltip="VidMax">
+                        <SidebarMenuButton size="lg" asChild tooltip="VidMaxx">
                             <Link href="/dashboard">
                                 <Image
                                     src="/vidmaxx-icon.svg"
-                                    alt="VidMax Logo"
+                                    alt="VidMaxx Logo"
                                     width={isCollapsed ? 40 : 32}
                                     height={isCollapsed ? 40 : 32}
                                     className={isCollapsed ? "w-10 h-10 rounded-lg" : "w-8 h-8 rounded-lg"}
                                 />
-                                <span className="truncate font-bold text-xl">VidMax</span>
+                                <span className="truncate font-bold text-xl">VidMaxx</span>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
@@ -107,16 +107,21 @@ export function DashboardSidebar({ ...props }: React.ComponentProps<typeof Sideb
                             </SidebarMenuItem>
 
                             {/* Navigation Items */}
-                            {data.navMain.map((item) => (
-                                <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild isActive={pathname === item.url} tooltip={item.title}>
-                                        <Link href={item.url}>
-                                            <item.icon />
-                                            <span>{item.title}</span>
-                                        </Link>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                            ))}
+                            {data.navMain.map((item) => {
+                                const isActive = pathname === item.url ||
+                                    (item.url !== "/dashboard" && pathname.startsWith(item.url + "/")) ||
+                                    (item.url === "/dashboard" && pathname === "/dashboard")
+                                return (
+                                    <SidebarMenuItem key={item.title}>
+                                        <SidebarMenuButton asChild isActive={isActive} tooltip={item.title}>
+                                            <Link href={item.url}>
+                                                <item.icon />
+                                                <span>{item.title}</span>
+                                            </Link>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                )
+                            })}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>

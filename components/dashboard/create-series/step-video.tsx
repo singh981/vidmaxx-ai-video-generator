@@ -15,14 +15,14 @@ const videoOptions = [
     {
         id: "ai-generated",
         name: "AI Generated Video",
-        description: "Automatically generated video content using AI models for rapid creation.",
+        description: "Generate videos using AI-assisted tools.",
         icon: Sparkles,
         color: "bg-purple-100 text-purple-600",
     },
     {
         id: "upload",
         name: "Upload Video",
-        description: "Upload your own video files for processing.",
+        description: "Upload your own video files and metadata.",
         icon: Upload,
         color: "bg-green-100 text-green-600",
     },
@@ -39,7 +39,7 @@ export function StepVideo({ value, onChange }: StepVideoProps) {
             <div>
                 <h2 className="text-2xl font-bold">Video Options</h2>
                 <p className="text-muted-foreground">
-                    Choose your preferred video source type.
+                    Choose video options by selecting a background asset video.
                 </p>
             </div>
 

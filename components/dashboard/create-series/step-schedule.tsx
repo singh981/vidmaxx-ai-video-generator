@@ -43,7 +43,7 @@ export function StepSchedule({ value, onChange }: StepScheduleProps) {
             <div>
                 <h2 className="text-2xl font-bold">Schedule Publishing</h2>
                 <p className="text-muted-foreground">
-                    Schedule publishing of the slide.
+                    Schedule publishing of the series.
                 </p>
             </div>
 

@@ -53,7 +53,7 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
             <div>
                 <h2 className="text-2xl font-bold">Caption Settings</h2>
                 <p className="text-muted-foreground">
-                    Configure your caption text style and positioning options.
+                    Add a short caption that describes this series.
                 </p>
             </div>
 
@@ -61,7 +61,7 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                 <div className="space-y-2">
                     <Label>Caption</Label>
                     <Textarea
-                        placeholder="Enter your caption text here (optional)"
+                        placeholder="Enter a brief caption (max 200 characters)."
                         value={value.text}
                         onChange={(e) => onChange({ ...value, text: e.target.value })}
                         className="min-h-[100px]"
@@ -92,7 +92,10 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                                 className="h-8 w-8"
                                 onClick={toggleBold}
                                 aria-pressed={value.bold}
-                                aria-label="Bold"
+                                aria-label="Bold (Formatting not implemented)"
+                                title="Formatting not implemented"
+                                disabled
+                                aria-disabled="true"
                             >
                                 <Bold className="h-4 w-4" />
                             </Button>
@@ -102,7 +105,10 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                                 className="h-8 w-8"
                                 onClick={toggleItalic}
                                 aria-pressed={value.italic}
-                                aria-label="Italic"
+                                aria-label="Italic (Formatting not implemented)"
+                                title="Formatting not implemented"
+                                disabled
+                                aria-disabled="true"
                             >
                                 <Italic className="h-4 w-4" />
                             </Button>
@@ -112,7 +118,10 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                                 className="h-8 w-8"
                                 onClick={toggleUnderline}
                                 aria-pressed={value.underline}
-                                aria-label="Underline"
+                                aria-label="Underline (Formatting not implemented)"
+                                title="Formatting not implemented"
+                                disabled
+                                aria-disabled="true"
                             >
                                 <Underline className="h-4 w-4" />
                             </Button>

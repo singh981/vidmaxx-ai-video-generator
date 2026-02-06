@@ -30,7 +30,7 @@ export function StepLanguage({ value, onChange }: StepLanguageProps) {
         <div className="space-y-6">
             <div>
                 <h2 className="text-2xl font-bold">Select Language</h2>
-                <p className="text-muted-foreground">Choose the language for your video series.</p>
+                <p className="text-muted-foreground">Select a language</p>
             </div>
 
             <div className="relative">
