@@ -60,6 +60,17 @@ const data = {
     ],
 }
 
+/**
+ * Main sidebar navigation component for the dashboard.
+ * 
+ * Includes:
+ * - Collapsible state management
+ * - Responsive layout
+ * - Navigation links with active state highlighting
+ * - User profile section
+ * 
+ * @param props - Inherited sidebar properties
+ */
 export function DashboardSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     const pathname = usePathname()
     const { state } = useSidebar()

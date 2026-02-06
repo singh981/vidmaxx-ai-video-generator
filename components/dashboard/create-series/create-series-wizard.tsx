@@ -49,6 +49,13 @@ interface FormData {
     }
 }
 
+
+/**
+ * Wizard component for creating a new video series.
+ * Manages the state and navigation for the multi-step creation process.
+ * 
+ * @returns The rendered wizard component
+ */
 export function CreateSeriesWizard() {
     const router = useRouter()
     const { state } = useSidebar()
@@ -76,6 +83,9 @@ export function CreateSeriesWizard() {
         },
     })
 
+    /**
+     * Advances to the next step or submits the form if on the final step.
+     */
     const handleNext = () => {
         if (currentStep < 7) {
             setCurrentStep(currentStep + 1)
@@ -85,6 +95,9 @@ export function CreateSeriesWizard() {
         }
     }
 
+    /**
+     * Navigates back to the previous step or exits the wizard if on the first step.
+     */
     const handleBack = () => {
         if (currentStep > 1) {
             setCurrentStep(currentStep - 1)

@@ -25,6 +25,14 @@ const platforms = [
     { id: "tiktok", name: "TikTok", icon: Video, color: "bg-black text-white" },
 ]
 
+/**
+ * Component for scheduling the series publication.
+ * Allows setting date, time, and target platforms (multi-select).
+ * 
+ * @param props - Component properties
+ * @param props.value - Current schedule configuration data
+ * @param props.onChange - Callback to update schedule configuration
+ */
 export function StepSchedule({ value, onChange }: StepScheduleProps) {
     const togglePlatform = (platformId: string) => {
         const newPlatforms = value.platforms.includes(platformId)

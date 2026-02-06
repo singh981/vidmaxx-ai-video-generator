@@ -38,6 +38,14 @@ const colorPresets = [
     "#22c55e", // green
 ]
 
+/**
+ * Component for configuring video caption settings.
+ * Allows users to set text, font, styling, positioning, and color.
+ * 
+ * @param props - Component properties
+ * @param props.value - Current caption configuration data
+ * @param props.onChange - Callback to update caption configuration
+ */
 export function StepCaption({ value, onChange }: StepCaptionProps) {
     const toggleBold = () => onChange({ ...value, bold: !value.bold })
     const toggleItalic = () => onChange({ ...value, italic: !value.italic })

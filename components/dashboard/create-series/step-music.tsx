@@ -18,6 +18,14 @@ interface StepMusicProps {
     onChange: (value: string) => void
 }
 
+/**
+ * Component for selecting background music.
+ * Provides a searchable list of music tracks/moods.
+ * 
+ * @param props - Component properties
+ * @param props.value - Currently selected music track ID
+ * @param props.onChange - Callback to update selected music
+ */
 export function StepMusic({ value, onChange }: StepMusicProps) {
     const [search, setSearch] = React.useState("")
 

@@ -33,6 +33,14 @@ interface StepVideoProps {
     onChange: (value: string) => void
 }
 
+/**
+ * Component for selecting the video source type.
+ * Options include Stock Video, AI Generated, or Upload.
+ * 
+ * @param props - Component properties
+ * @param props.value - Currently selected video option ID
+ * @param props.onChange - Callback to update selected video option
+ */
 export function StepVideo({ value, onChange }: StepVideoProps) {
     return (
         <div className="space-y-6">

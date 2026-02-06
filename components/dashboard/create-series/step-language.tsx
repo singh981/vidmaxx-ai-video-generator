@@ -19,6 +19,14 @@ interface StepLanguageProps {
     onChange: (value: string) => void
 }
 
+/**
+ * Component for selecting the video language.
+ * Provides a searchable list of supported languages.
+ * 
+ * @param props - Component properties
+ * @param props.value - Currently selected language ID
+ * @param props.onChange - Callback to update selected language
+ */
 export function StepLanguage({ value, onChange }: StepLanguageProps) {
     const [search, setSearch] = React.useState("")
 

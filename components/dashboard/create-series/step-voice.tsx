@@ -34,6 +34,14 @@ interface StepVoiceProps {
     onChange: (value: string) => void
 }
 
+/**
+ * Component for selecting a voiceover profile.
+ * Provides a searchable list of available AI voices.
+ * 
+ * @param props - Component properties
+ * @param props.value - Currently selected voice ID
+ * @param props.onChange - Callback to update selected voice
+ */
 export function StepVoice({ value, onChange }: StepVoiceProps) {
     const [search, setSearch] = React.useState("")
 
