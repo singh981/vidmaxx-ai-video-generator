@@ -5,19 +5,22 @@ VidMaxx is an AI-powered application that allows users to generate high-quality 
 ## Features
 
 - **AI Video Generation**: Create stunning videos from text prompts.
+- **Create Series Wizard**: Step-by-step wizard for creating video series with topic selection, language, voice, music, video style, captions, and scheduling.
+- **Dashboard Layout**: Persistent sidebar and header that remain consistent across all dashboard pages.
+- **Collapsible Sidebar**: Responsive sidebar with logo that stays visible (larger when collapsed).
 - **Secure Authentication**: User authentication and management powered by Clerk.
 - **Robust User Sync**: Real-time synchronization between Clerk and Supabase via webhooks.
 - **Scalable Database**: Data persistence handled by Supabase.
 - **Enhanced Authentication UI**: Seamless Sign Up and Sign In experience with Clerk modals.
-- **User Dashboard**: Dedicated dashboard access with smart routing based on authentication state.
-- **Modern UI**: Built with Next.js, featuring a refined Hero section and responsive Header.
+- **Modern UI**: Built with Next.js and Shadcn UI components.
 
 ## Tech Stack
 
 - **Framework**: Next.js 14+ (App Router)
 - **Authentication**: Clerk
 - **Database**: Supabase
-- **Styling**: CSS Modules / Tailwind (if applicable)
+- **UI Components**: Shadcn UI
+- **Styling**: Tailwind CSS
 
 ## Getting Started
 
@@ -32,31 +35,19 @@ First, install the dependencies:
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
-# or
-bun install
 ```
 
 Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Environment Variables
 
-Make sure to set up your `.env.local` file with the necessary keys for Clerk and Supabase:
+Create a `.env.local` file with the following keys:
 
 ```env
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=...
@@ -67,9 +58,26 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
 ```
 
+## Project Structure
+
+```text
+app/
+├── dashboard/           # Dashboard pages with shared layout
+│   ├── layout.tsx       # Dashboard layout with sidebar
+│   ├── page.tsx         # Main dashboard page
+│   ├── create-series/   # Create series wizard
+│   ├── series/          # Series management
+│   └── ...
+components/
+├── dashboard/           # Dashboard-specific components
+│   ├── dashboard-sidebar.tsx
+│   └── create-series/   # Wizard step components
+└── ui/                  # Shadcn UI components
+```
+
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Clerk Documentation](https://clerk.com/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Shadcn UI](https://ui.shadcn.com)
