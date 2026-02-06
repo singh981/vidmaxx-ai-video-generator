@@ -226,7 +226,8 @@ def get_user(id: int) -> Optional[Dict[str, Any]]:
 - [ ] No unnecessary database calls
 - [ ] Efficient algorithms
 
-**Correctness (HIGH)** - [ ] Proper error handling
+**Correctness (HIGH)**
+- [ ] Proper error handling
 - [ ] Edge cases handled
 - [ ] Input validation
 - [ ] No race conditions

@@ -1,17 +1,11 @@
 "use client"
 
 import * as React from "react"
-import { Calendar, Clock, Youtube, Instagram } from "lucide-react"
+import { Calendar, Clock, Youtube, Instagram, Video } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
+
 import { Button } from "@/components/ui/button"
 
 interface ScheduleData {
@@ -28,6 +22,7 @@ interface StepScheduleProps {
 const platforms = [
     { id: "youtube", name: "YouTube", icon: Youtube, color: "bg-red-100 text-red-600" },
     { id: "instagram", name: "Instagram", icon: Instagram, color: "bg-pink-100 text-pink-600" },
+    { id: "tiktok", name: "TikTok", icon: Video, color: "bg-black text-white" },
 ]
 
 export function StepSchedule({ value, onChange }: StepScheduleProps) {
@@ -74,22 +69,7 @@ export function StepSchedule({ value, onChange }: StepScheduleProps) {
                 </div>
             </div>
 
-            <div className="space-y-2">
-                <Label>Platform</Label>
-                <Select
-                    value={value.platforms[0] || "youtube"}
-                    onValueChange={(platform) => onChange({ ...value, platforms: [platform] })}
-                >
-                    <SelectTrigger>
-                        <SelectValue placeholder="Select platform" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="youtube">YouTube</SelectItem>
-                        <SelectItem value="instagram">Instagram</SelectItem>
-                        <SelectItem value="tiktok">TikTok</SelectItem>
-                    </SelectContent>
-                </Select>
-            </div>
+
 
             <div className="flex flex-wrap gap-2">
                 {platforms.map((platform) => (

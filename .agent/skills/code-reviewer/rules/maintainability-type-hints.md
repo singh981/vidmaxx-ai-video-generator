@@ -17,7 +17,7 @@ Type hints provide:
 - **Documentation** - types explain intent
 - **Confidence** - easier refactoring
 
-##❌ Incorrect
+## ❌ Incorrect
 
 ```python
 # ❌ No type hints
