@@ -1,30 +1,29 @@
 "use client"
 
 import * as React from "react"
-import { Search, Play, User } from "lucide-react"
+import { Search, Play } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 
 const voices = [
     {
         id: "male-energetic",
         name: "Male - Energetic",
-        description: "Female Noisepetitive, Voice - Drupetic",
+        description: "A lively, upbeat male voice perfect for dynamic content.",
         avatar: "👨",
         color: "bg-purple-100",
     },
     {
         id: "female-calm",
         name: "Female - Calm",
-        description: "Female grotest with Faseto - Calm",
+        description: "A soothing, relaxed female voice ideal for narration.",
         avatar: "👩",
         color: "bg-pink-100",
     },
     {
         id: "ai-neutral",
         name: "AI - Neutral",
-        description: "Female dnomes with AI - Neutral",
+        description: "A balanced AI-generated voice suitable for various content.",
         avatar: "🤖",
         color: "bg-blue-100",
     },
@@ -47,7 +46,7 @@ export function StepVoice({ value, onChange }: StepVoiceProps) {
             <div>
                 <h2 className="text-2xl font-bold">Choose Voice</h2>
                 <p className="text-muted-foreground">
-                    Select from available in from your voice profile
+                    Select a voice from your available voice profiles.
                 </p>
             </div>
 
@@ -83,9 +82,12 @@ export function StepVoice({ value, onChange }: StepVoiceProps) {
                                 {voice.description}
                             </p>
                         </div>
-                        <Button variant="ghost" size="icon" className="rounded-full">
+                        <span
+                            className="w-8 h-8 rounded-full flex items-center justify-center bg-muted hover:bg-muted/80"
+                            aria-label={`Preview ${voice.name} voice`}
+                        >
                             <Play className="w-4 h-4" />
-                        </Button>
+                        </span>
                         <div
                             className={cn(
                                 "w-5 h-5 rounded-full border-2 transition-all",

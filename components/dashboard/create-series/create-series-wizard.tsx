@@ -37,6 +37,10 @@ interface FormData {
         text: string
         font: string
         position: "left" | "center" | "right"
+        bold: boolean
+        italic: boolean
+        underline: boolean
+        color: string
     }
     schedule: {
         date: string
@@ -60,6 +64,10 @@ export function CreateSeriesWizard() {
             text: "",
             font: "inter",
             position: "center",
+            bold: false,
+            italic: false,
+            underline: false,
+            color: "#fbbf24",
         },
         schedule: {
             date: "",
@@ -150,7 +158,7 @@ export function CreateSeriesWizard() {
                     <SidebarTrigger className="-ml-1" />
                 </div>
                 <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" aria-label="Help">
                         <HelpCircle className="h-5 w-5" />
                     </Button>
                     <UserButton />

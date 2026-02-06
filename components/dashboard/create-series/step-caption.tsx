@@ -18,6 +18,10 @@ interface CaptionData {
     text: string
     font: string
     position: "left" | "center" | "right"
+    bold: boolean
+    italic: boolean
+    underline: boolean
+    color: string
 }
 
 interface StepCaptionProps {
@@ -25,13 +29,31 @@ interface StepCaptionProps {
     onChange: (value: CaptionData) => void
 }
 
+const colorPresets = [
+    "#fbbf24", // yellow
+    "#f97316", // orange
+    "#ef4444", // red
+    "#8b5cf6", // purple
+    "#3b82f6", // blue
+    "#22c55e", // green
+]
+
 export function StepCaption({ value, onChange }: StepCaptionProps) {
+    const toggleBold = () => onChange({ ...value, bold: !value.bold })
+    const toggleItalic = () => onChange({ ...value, italic: !value.italic })
+    const toggleUnderline = () => onChange({ ...value, underline: !value.underline })
+    const cycleColor = () => {
+        const currentIndex = colorPresets.indexOf(value.color)
+        const nextIndex = (currentIndex + 1) % colorPresets.length
+        onChange({ ...value, color: colorPresets[nextIndex] })
+    }
+
     return (
         <div className="space-y-6">
             <div>
                 <h2 className="text-2xl font-bold">Caption Settings</h2>
                 <p className="text-muted-foreground">
-                    Select your captions text chroise serour caption noames.
+                    Configure your caption text style and positioning options.
                 </p>
             </div>
 
@@ -39,7 +61,7 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                 <div className="space-y-2">
                     <Label>Caption</Label>
                     <Textarea
-                        placeholder="Test is not your caption, fore sow as text."
+                        placeholder="Enter your caption text here (optional)"
                         value={value.text}
                         onChange={(e) => onChange({ ...value, text: e.target.value })}
                         className="min-h-[100px]"
@@ -64,17 +86,44 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                             </SelectContent>
                         </Select>
                         <div className="flex items-center gap-1 border rounded-md p-1">
-                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                            <Button
+                                variant={value.bold ? "default" : "ghost"}
+                                size="icon"
+                                className="h-8 w-8"
+                                onClick={toggleBold}
+                                aria-pressed={value.bold}
+                                aria-label="Bold"
+                            >
                                 <Bold className="h-4 w-4" />
                             </Button>
-                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                            <Button
+                                variant={value.italic ? "default" : "ghost"}
+                                size="icon"
+                                className="h-8 w-8"
+                                onClick={toggleItalic}
+                                aria-pressed={value.italic}
+                                aria-label="Italic"
+                            >
                                 <Italic className="h-4 w-4" />
                             </Button>
-                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                            <Button
+                                variant={value.underline ? "default" : "ghost"}
+                                size="icon"
+                                className="h-8 w-8"
+                                onClick={toggleUnderline}
+                                aria-pressed={value.underline}
+                                aria-label="Underline"
+                            >
                                 <Underline className="h-4 w-4" />
                             </Button>
                         </div>
-                        <div className="w-8 h-8 rounded bg-gradient-to-br from-yellow-400 to-red-500" />
+                        <button
+                            type="button"
+                            onClick={cycleColor}
+                            className="w-8 h-8 rounded border-2 border-muted cursor-pointer transition-transform hover:scale-110"
+                            style={{ backgroundColor: value.color || colorPresets[0] }}
+                            aria-label="Change caption color"
+                        />
                     </div>
                 </div>
 
@@ -85,6 +134,7 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                             variant={value.position === "left" ? "default" : "outline"}
                             size="icon"
                             onClick={() => onChange({ ...value, position: "left" })}
+                            aria-label="Align left"
                         >
                             <AlignLeft className="h-4 w-4" />
                         </Button>
@@ -92,6 +142,7 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                             variant={value.position === "center" ? "default" : "outline"}
                             size="icon"
                             onClick={() => onChange({ ...value, position: "center" })}
+                            aria-label="Align center"
                         >
                             <AlignCenter className="h-4 w-4" />
                         </Button>
@@ -99,6 +150,7 @@ export function StepCaption({ value, onChange }: StepCaptionProps) {
                             variant={value.position === "right" ? "default" : "outline"}
                             size="icon"
                             onClick={() => onChange({ ...value, position: "right" })}
+                            aria-label="Align right"
                         >
                             <AlignRight className="h-4 w-4" />
                         </Button>

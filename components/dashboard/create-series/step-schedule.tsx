@@ -76,7 +76,10 @@ export function StepSchedule({ value, onChange }: StepScheduleProps) {
 
             <div className="space-y-2">
                 <Label>Platform</Label>
-                <Select defaultValue="youtube">
+                <Select
+                    value={value.platforms[0] || "youtube"}
+                    onValueChange={(platform) => onChange({ ...value, platforms: [platform] })}
+                >
                     <SelectTrigger>
                         <SelectValue placeholder="Select platform" />
                     </SelectTrigger>

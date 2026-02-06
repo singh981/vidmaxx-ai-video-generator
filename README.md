@@ -60,7 +60,7 @@ SUPABASE_SERVICE_ROLE_KEY=...
 
 ## Project Structure
 
-```
+```text
 app/
 ├── dashboard/           # Dashboard pages with shared layout
 │   ├── layout.tsx       # Dashboard layout with sidebar
